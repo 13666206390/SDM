@@ -1,0 +1,22 @@
+<div ng-app="mainApp" ng-controller="deviceListCtrl">
+<table class="table table-striped">
+	<tr>
+		<th>设备ID</th>
+		<th>设备名字</th>
+		<th>设备描述</th>
+		<th>设备状态</th>
+		<th>操作</th>
+	</tr>
+	<tr ng-repeat="dev in devices ">
+		<td>{{dev.device_id}}</td>
+		<td>{{dev.device_name}}</td>
+		<td>{{dev.device_description}}</td>
+		<td>{{dev.device_status}}</td>
+		<td>
+			<span title="删除" ng-click="delete(dev.id,dev.name)" style="cursor: pointer" class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;&nbsp;
+			<span title="修改" ng-click="edit(dev)" style="cursor: pointer" class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;&nbsp;
+			<span title="详情" ng-click="detail(dev.id)" style="cursor: pointer" class="glyphicon glyphicon-list"></span>
+		</td>
+	</tr>
+</table>
+</div>
